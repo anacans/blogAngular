@@ -13,11 +13,36 @@ export class PostsService {
     this.arrPosts = [];
   }
 
-  createPost(formValue: any) {
 
+
+  async createPost(formValue: any): Promise<any> {
+    const newPost: Post = {
+      titulo: formValue.titulo,
+      texto: formValue.texto,
+      autor: formValue.autor,
+      fecha: formValue.fecha,
+      categoria: formValue.categoria,
+      imagen: formValue.imagen,
+    };
+
+    this.arrPosts.push(newPost);
+
+    return newPost; // devuelve el nuevo post creado
   }
 
-  getAll() {
 
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -1,6 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Post } from 'src/app/interfaces/post.component';
+
 
 import { PostsService } from 'src/app/services/posts.service';
 
@@ -13,9 +13,6 @@ export class FormularioComponent {
 
   formulario: FormGroup;
 
-
-
-
   //services
   postService = inject(PostsService);
 
@@ -27,13 +24,25 @@ export class FormularioComponent {
       autor: new FormControl(),
       fecha: new FormControl(),
       categoria: new FormControl(),
+      imagen: new FormControl(),
     });
 
   }
 
-  onSubmit() {
-    const response = this.postService.createPost(this.formulario.value)
-    console.log(response);
+  async onSubmit() {
+    try {
+      const response = await this.postService.createPost(this.formulario.value);
+      console.log('Post creado:', response);
+
+    } catch (error) {
+      console.error('Error al crear el post:', error);
+
+    }
   }
+
+
+
+
+
 
 }

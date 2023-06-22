@@ -4,4 +4,5 @@ export interface Post {
     autor: string;
     fecha: string;
     categoria: string;
+    imagen: string;
 }
