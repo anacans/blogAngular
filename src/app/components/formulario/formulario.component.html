@@ -1,1 +1,35 @@
-<p>formulario works!</p>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="border border-success rounded p-3 mt-5 bg-success-subtle">
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">Titulo</span>
+        <input type="text" class="form-control" formControlName="titulo">
+        <span class="input-group-text">Autor</span>
+        <input type="text" class="form-control" formControlName="autor">
+        <span class="input-group-text">Fecha</span>
+        <input type="date" class="form-control" formControlName="fecha">
+
+    </div>
+
+    <div class="input-group mb-3">
+        <select class="form-select" aria-label="Default select example" formControlName="categoria">
+            <option selected>Categoria</option>
+            <option value="naturaleza">Naturaleza</option>
+            <option value="viajes">Viajes</option>
+            <option value="rutas">Rutas</option>
+            <option value="rutas">Otros</option>
+        </select>
+
+
+
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">Texto</span>
+        <textarea class="form-control" aria-label="With textarea" formControlName="texto"></textarea>
+    </div>
+
+    <div class="input-group">
+        <input type="submit" value="Enviar" class="btn btn-success">
+    </div>
+
+</form>
