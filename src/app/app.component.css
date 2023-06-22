@@ -1,0 +1,20 @@
+footer {
+    background-color: beige;
+    border: 1px solid dodgerblue;
+    color: black;
+    padding: 1.25em 0px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 110%;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer a:hover {
+    color: blue;
+}

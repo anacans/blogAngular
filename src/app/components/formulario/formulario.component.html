@@ -1,35 +1,60 @@
-<form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="border border-success rounded p-3 mt-5 bg-success-subtle">
+<div class="container">
+    <div class="row">
 
-    <div class="input-group mb-3">
-        <span class="input-group-text">Titulo</span>
-        <input type="text" class="form-control" formControlName="titulo">
-        <span class="input-group-text">Autor</span>
-        <input type="text" class="form-control" formControlName="autor">
-        <span class="input-group-text">Fecha</span>
-        <input type="date" class="form-control" formControlName="fecha">
+        <div class="col-4 p-3 mt-5 p-5">
+            <h3>Añade un nuevo post:</h3>
+            <h6>¡Cuéntanos tus experiencia y comparte con la comunidad!</h6>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt dolore nesciunt repudiandae rem nobis,
+                optio autem deserunt eos voluptate asperior.</p>
+        </div>
+
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()"
+            class="border border-primary rounded p-3 mt-5 bg-primary-subtle col-8">
+
+            <h6>Acuérdate de rellenar todos los campos :D</h6>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Titulo</span>
+                <input type="text" class="form-control" formControlName="titulo">
+                <span class="input-group-text">Autor</span>
+                <input type="text" class="form-control" formControlName="autor">
+                <span class="input-group-text">Fecha</span>
+                <input type="date" class="form-control" formControlName="fecha">
+
+            </div>
+
+
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Categoria</span>
+                <select class="form-select" aria-label="Default select example" formControlName="categoria">
+
+                    <option value="naturaleza">Naturaleza</option>
+                    <option value="viajes">Viajes</option>
+                    <option value="rutas">Rutas</option>
+                    <option value="rutas">Otros</option>
+                </select>
+
+                <span class="input-group-text">Imagen</span>
+                <input type="text" class="form-control" formControlName="imagen">
+
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Texto</span>
+                <textarea class="form-control" aria-label="With textarea" formControlName="texto"></textarea>
+            </div>
+
+            <div class="input-group" (click)="onClick()">
+                <input type="submit" value="Enviar" class="btn btn-primary">
+            </div>
+
+            <p class="error" *ngIf="checkError('titulo', 'required')">El campo no puede estar vacio
+            </p>
+
+        </form>
+
+
 
     </div>
-
-    <div class="input-group mb-3">
-        <select class="form-select" aria-label="Default select example" formControlName="categoria">
-            <option selected>Categoria</option>
-            <option value="naturaleza">Naturaleza</option>
-            <option value="viajes">Viajes</option>
-            <option value="rutas">Rutas</option>
-            <option value="rutas">Otros</option>
-        </select>
-
-
-
-    </div>
-
-    <div class="input-group mb-3">
-        <span class="input-group-text">Texto</span>
-        <textarea class="form-control" aria-label="With textarea" formControlName="texto"></textarea>
-    </div>
-
-    <div class="input-group">
-        <input type="submit" value="Enviar" class="btn btn-success">
-    </div>
-
-</form>
+</div>

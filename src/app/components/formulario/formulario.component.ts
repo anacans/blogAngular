@@ -1,8 +1,10 @@
 import { Component, inject, Input } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 
 import { PostsService } from 'src/app/services/posts.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulario',
@@ -19,19 +21,31 @@ export class FormularioComponent {
 
   constructor() {
     this.formulario = new FormGroup({
-      titulo: new FormControl(),
-      texto: new FormControl(),
-      autor: new FormControl(),
-      fecha: new FormControl(),
-      categoria: new FormControl(),
-      imagen: new FormControl(),
+      titulo: new FormControl(null, [
+        Validators.required
+      ]),
+      texto: new FormControl(null, [
+        Validators.required
+      ]),
+      autor: new FormControl(null, [
+        Validators.required
+      ]),
+      fecha: new FormControl(null, [
+        Validators.required
+      ]),
+      categoria: new FormControl(null, [
+        Validators.required
+      ]),
+      imagen: new FormControl(null, [
+        Validators.required
+      ]),
     });
 
   }
 
-  async onSubmit() {
+  onSubmit() {
     try {
-      const response = await this.postService.createPost(this.formulario.value);
+      const response = this.postService.createPost(this.formulario.value);
       console.log('Post creado:', response);
 
     } catch (error) {
@@ -40,9 +54,18 @@ export class FormularioComponent {
     }
   }
 
+  onClick() {
+    Swal.fire('Post guardado correctamente')
+  }
 
-
-
-
-
+  checkError(campo: string, error: string) {
+    return this.formulario.get(campo)?.hasError(error) && this.formulario.get(campo)?.touched
+  }
 }
+
+
+
+
+
+
+

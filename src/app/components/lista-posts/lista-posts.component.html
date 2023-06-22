@@ -1,1 +1,40 @@
-<p>lista-posts works!</p>
+<div class="container m-5">
+    <div class="row">
+
+        <label class="h6" for="categoria">Selecciona la categoría para filtrar los post:</label>
+        <select class="form-select" [(ngModel)]="categoriaSeleccionada"
+            (change)="filtrarPorCategoria(categoriaSeleccionada)">
+            <option value="todas">Todas</option>
+            <option value="naturaleza">Naturaleza</option>
+            <option value="viajes">Viajes</option>
+            <option value="rutas">Rutas</option>
+            <option value="otros">Otros</option>
+        </select>
+
+    </div>
+</div>
+
+
+
+<div class="container">
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+        <div class="col">
+
+            <div class="card border rounded border-primary" *ngFor="let post of arrPosts">
+                <img [src]="post.imagen" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.titulo}}</h5>
+                    <p class="card-text">{{post.autor}}</p>
+                    <p class="card-text">{{post.fecha}}</p>
+                    <p class="card-text">{{post.categoria}}</p>
+                    <p class="card-text">{{post.texto}}</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

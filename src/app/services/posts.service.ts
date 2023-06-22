@@ -15,7 +15,7 @@ export class PostsService {
 
 
 
-  async createPost(formValue: any): Promise<any> {
+  createPost(formValue: Post): Post {
     const newPost: Post = {
       titulo: formValue.titulo,
       texto: formValue.texto,
@@ -30,7 +30,13 @@ export class PostsService {
     return newPost; // devuelve el nuevo post creado
   }
 
+  getAll(): Post[] {
+    return this.arrPosts;
+  }
 
+  getPostsByCategory(categoria: string): Post[] {
+    return this.arrPosts.filter(post => post.categoria === categoria);
+  }
 
 
 
