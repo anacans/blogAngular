@@ -13,8 +13,6 @@ export class PostsService {
     this.arrPosts = [];
   }
 
-
-
   createPost(formValue: Post): Post {
     const newPost: Post = {
       titulo: formValue.titulo,
