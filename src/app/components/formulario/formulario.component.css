@@ -1,0 +1,26 @@
+input.ng-valid.ng-touched {
+    border: 2px solid green;
+}
+
+input.ng-invalid.ng-touched {
+    border: 2px solid tomato;
+}
+
+.error {
+    color: tomato;
+}
+
+/* class="border border-primary rounded p-3 mt-5 bg-primary-subtle col-8" */
+
+/* class="col-4 p-3 mt-5 p-5" */
+
+.mt-3 {
+    border: 1px solid #1B2429;
+    background-color: #adc8da;
+    border-radius: 10px;
+    padding: 20px
+}
+
+.btn {
+    background-color: white;
+}
