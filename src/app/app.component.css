@@ -1,20 +1,71 @@
-footer {
-    background-color: beige;
-    border: 1px solid dodgerblue;
-    color: black;
+/* header */
+
+header {
+    background-color: #1B2429;
+
+    text-decoration: none;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav .menu li {
+    color: #FFFFFF;
+    padding: 30px;
+    display: inline;
+    width: 100%;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: larger;
+}
+
+
+/* header */
+
+/* footer */
+/* footer {
+    background-color: #1B2429;
+    color: #FFFFFF;
     padding: 1.25em 0px;
     text-align: center;
-    position: fixed;
     width: 100%;
     bottom: 0;
     font-size: 110%;
+    font-weight: 400;
+    position: fixed;
+
 }
 
 footer a {
     text-decoration: none;
-    color: black;
+    color: #FFFFFF;
 }
 
 footer a:hover {
-    color: blue;
+    color: #A5B7C3;
+} */
+
+/* footer */
+
+main {
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+
+}
+
+
+
+.titulo {
+
+    display: flex;
+    padding: 25px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
 }

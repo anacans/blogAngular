@@ -19,7 +19,9 @@ export class ListaPostsComponent {
 
   constructor() {
     this.categoriaSeleccionada = '';
-    this.arrPosts = [];
+    this.arrPosts = [
+
+    ];
     this.formulario = new FormGroup({
       titulo: new FormControl(),
       texto: new FormControl(),
@@ -31,13 +33,10 @@ export class ListaPostsComponent {
   }
 
   ngOnInit() {
-    try {
-      const response = this.postsService.getAll()
 
-      this.arrPosts = response
-    } catch (error) {
-      console.log(error)
-    }
+    const response = this.postsService.getAll()
+    this.arrPosts = response
+
   }
 
   filtrarPorCategoria(categoria: string) {

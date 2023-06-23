@@ -52,6 +52,7 @@ export class FormularioComponent {
       console.error('Error al crear el post:', error);
 
     }
+    this.formulario.reset()
   }
 
   onClick() {
